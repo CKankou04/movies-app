@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {BrowserRouter, Switch, Route} from "react-router-dom"
+
+import Home from "./views/Home";
+import { Navbar } from "./services/Navbar";
+import AddMovie from "./views/AddMovie";
+import UpdateMovie from "./views/UpdateMovie";
+import Movie from "./views/Movie";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route path="/" component={() => <Home />} exact />
+          <Route path="/addmovie" component={() => <AddMovie />} exact />
+          <Route path="/movie/:id" component={() => <Movie />} />
+          <Route path="/updatemovie" component={() => <UpdateMovie />} exact />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

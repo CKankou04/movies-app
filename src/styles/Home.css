@@ -1,0 +1,19 @@
+.form-search{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    padding:2rem;
+
+}
+.card-list{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height:auto;
+    border: solid 2px green;
+    border-radius: 10px;
+}
+.list-movie{
+ list-style:none;
+ text-decoration: none;
+}
