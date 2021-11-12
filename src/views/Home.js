@@ -43,10 +43,10 @@ const Home = () => {
                 <li className="list-movie">
                   <Link to={`/movie/${movie.id}`}>
                   <span className="image-movie">
-                    <img src={movie.poster} alt="image du film" width="200px" height="250px"/>
+                    <img src={movie.poster} alt="poster du film" width="200px" height="250px" className="list-img" />
                   </span>
                   </Link>
-                  <span className="info-movie">
+                  <span className="movie-info">
                     <p>{movie.title} </p>
                     <p> {movie.release_date} </p>
                     <p>{movie.description}</p>
