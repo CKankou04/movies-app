@@ -1,7 +1,8 @@
 .container-nav{
     display:flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:flex-end;
+    margin-right:2rem;
 }
 .list-nav{
     display:flex;
@@ -16,5 +17,15 @@
 .lien{
     text-decoration: none;
     color: white;
+    border:1px solid white;
+    box-shadow: inset 0 0 1em , 0 0 2em grey;
+    padding:0.5rem;
 
 }
+.lien:hover{
+    box-shadow: inset 0 0 1em , 0 0 2em white;
+    color:red;
+    font-size:1rem;
+    padding:0.7rem;
+}
+

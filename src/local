@@ -1,0 +1,30 @@
+<div>
+                                            <span>
+                                                <label htmlFor="title">Titre</label>
+                                                <input name="title" />
+                                            </span>
+                                            <span>
+                                                <label htmlFor="">Date de sortie</label>
+                                                <input name="date_release" />
+                                            </span>
+
+                                        </div>
+                                        <div>
+                                            <select>
+                                                <option value="humour"></option>
+                                                <option value="Comedie"></option>
+                                                <option value="Action"></option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <img src="" alt="poster poster" />
+                                        </div>
+                                        <div>
+                                            <img src="" />
+                                        </div>
+
+                                        image pour recupérer le poster_path
+                                         <img  src={"https://image.tmdb.org/t/p/original"+movie.poster_path} alt="poster de film" width="50rem"/>
+
+                                        balise de suppression
+                                        <button onClick={this.deleteRow.bind(this, id)}>Supprimer</button>

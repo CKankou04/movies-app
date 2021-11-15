@@ -3,13 +3,14 @@
     flex-wrap:wrap;
   }
   .list-movie{
-    width: 250px;
+    width: 300px;
     list-style:none;
     margin:1rem;
     background-color:#373b69;
     border-radius:3px;
     overflow:hidden;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.&)
+    box-shadow: inset 0 0 1em , 0 0 2em grey;
+    padding:1rem;
   }
   .list-img{
     max-width: 100%;
@@ -19,11 +20,24 @@
    flex-direction:column;
    justify-content: space-between;
    align-items: center;
-   padding:1rem;
+   padding:0.5rem;
   }
   .form-search{
     background-color:##373b69;
     padding:1rem;
     display:flex;
-    justify-content:center;
+    justify-content:space-evenly;
+    font-size:1.5rem;
+    align-items:center;
+    color:#A93226;
+  }
+  .form-search input{
+    border-radius:10px;
+    padding:3px;
+    width:15rem;
+  }
+  .description{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   }

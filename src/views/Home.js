@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import  '../styles/Home.css'
 import {Link} from 'react-router-dom'
 
-const Home = () => {
+const Home = (props) => {
   const [movieList, setMovieList] = useState([]);
   useEffect(() => {
     fetchData();
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <form className="form-search">
-        <span>
+        <span className="form-search-title">
           <label>Titre </label>
           <input type="text" name="titre" />
         </span>
@@ -47,13 +47,13 @@ const Home = () => {
                   </span>
                   </Link>
                   <span className="movie-info">
-                    <p>{movie.title} </p>
-                    <p> {movie.release_date} </p>
-                    <p>{movie.description}</p>
+                    <span>{movie.title} </span>
+                    <span> {movie.release_date} </span>
+                    <p className="description">{movie.description}</p>
                   </span>
                   <span className="container-btn">
                     <button>Modifier</button>
-                    <button>Supprimer</button>
+                    <button onClick={(e) => props.deleteMovie(e,props.movie.id)}>Supprimer</button>
                   </span>
 
                 </li>
