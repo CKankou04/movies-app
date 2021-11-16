@@ -41,3 +41,17 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   }
+  .movie-info-title{
+    font-size:1rem;
+    color:#A93226;
+  }
+  .container-btn{
+    display: flex;
+    justify-content: space-around;
+
+  }
+  .btn{
+    display:flex;
+    margin-right:3px;
+    padding:5px;
+  }

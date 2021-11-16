@@ -9,6 +9,7 @@ const Home = (props) => {
     fetchData();
   }, []);
 
+  //Fonction permettant de recupérer tous les films du server local json
   const fetchData = async () => {
     const data = await fetch(`http://localhost:3000/movies`);
     const result = await data.json();
@@ -16,6 +17,7 @@ const Home = (props) => {
 
   };
 
+  // fonction permettant de supprimer un film du server en cliquant sur le bonton supprimer
   const deleteMovie = (id) =>{
     axios.delete(`http://localhost:3000/movies/${id}`)
     .then((response) => console.log(response.data))
@@ -54,13 +56,13 @@ const Home = (props) => {
                   </span>
                   </Link>
                   <span className="movie-info">
-                    <span>{movie.title} </span>
-                    <span> {movie.release_date} </span>
+                    <span className="movie-info-title">{movie.title} </span>
+                    <span> {new Date(movie.release_date).toLocaleDateString('fr-FR')} </span>
                     <p className="description">{movie.description}</p>
                   </span>
                   <span className="container-btn">
-                    <button><Link to={`/updatemovie/${movie.id}`}>Modifier</Link></button>
-                    <button onClick={() => deleteMovie(movie.id)}>Supprimer</button>
+                    <button><Link to={`/updatemovie/${movie.id}`} className="btn">Modifier</Link></button>
+                    <button onClick={() => deleteMovie(movie.id)} className="btn">Supprimer</button>
                   </span>
 
                 </li>
