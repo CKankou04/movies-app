@@ -16,7 +16,7 @@ function App() {
           <Route path="/" component={() => <Home />} exact />
           <Route path="/addmovie" component={() => <AddMovie />} exact />
           <Route path="/movie/:id" component={() => <Movie />} />
-          <Route path="/updatemovie" component={() => <UpdateMovie />} exact />
+          <Route path="/updatemovie/:id" component={() => <UpdateMovie />} exact />
         </Switch>
       </BrowserRouter>
     </div>

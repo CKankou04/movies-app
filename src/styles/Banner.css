@@ -2,7 +2,6 @@
 	color: #F8F9F9;
 	text-align: center;
 	padding: 15px;
-	border-bottom: solid 3px black;
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: row;
@@ -10,10 +9,11 @@
 }
 
 .lmj-title {
-	padding-left: 32px;
+	padding-left: 50px;
+    letter-spacing:5px;
 }
 
 .lmj-logo {
-	height: 60px;
-	width: 60px;
+	height: 80px;
+	width: 80px;
 }

@@ -1,0 +1,37 @@
+.search-title{
+font-size:1.5rem;
+border-radius:10px;
+}
+.label_serch{
+    margin:7px;
+    font-size:1.5rem;
+}
+
+.card_new_movie{
+    width:90%;
+    background-color:rgb(242, 243, 244, 20%);
+    margin-left:5%;
+    text-align:left
+}
+.legend{
+    text-align:left;
+    font-size: 2rem;
+    color:white;
+}
+.title_and_date{
+    display:flex;
+    justify-content:space-evenly;
+    font-size:1rem;
+}
+.categories_new_movie{
+    display:flex;
+    justify-content:center;
+    padding:1rem;
+
+}
+.new_desc{
+    width:30rem;
+    height:auto;
+    padding:1rem;
+    margin:2rem;
+}

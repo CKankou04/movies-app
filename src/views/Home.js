@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import  '../styles/Home.css'
-import {Link} from 'react-router-dom'
+import  '../styles/Home.css';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 const Home = (props) => {
   const [movieList, setMovieList] = useState([]);
@@ -11,8 +12,14 @@ const Home = (props) => {
   const fetchData = async () => {
     const data = await fetch(`http://localhost:3000/movies`);
     const result = await data.json();
-    console.log(result);
     setMovieList(result);
+
+  };
+
+  const deleteMovie = (id) =>{
+    axios.delete(`http://localhost:3000/movies/${id}`)
+    .then((response) => console.log(response.data))
+    .catch((er) => console.log(er));
   };
 
   return (
@@ -39,8 +46,8 @@ const Home = (props) => {
       {movieList && (
         <div className="container-list-movie">
           <ul className="card-list">
-            {movieList.map((movie) => (
-                <li className="list-movie">
+            {movieList.map((movie, key) => (
+                <li className="list-movie" key={key}>
                   <Link to={`/movie/${movie.id}`}>
                   <span className="image-movie">
                     <img src={movie.poster} alt="poster du film" width="200px" height="250px" className="list-img" />
@@ -52,8 +59,8 @@ const Home = (props) => {
                     <p className="description">{movie.description}</p>
                   </span>
                   <span className="container-btn">
-                    <button>Modifier</button>
-                    <button onClick={(e) => props.deleteMovie(e,props.movie.id)}>Supprimer</button>
+                    <button><Link to={`/updatemovie/${movie.id}`}>Modifier</Link></button>
+                    <button onClick={() => deleteMovie(movie.id)}>Supprimer</button>
                   </span>
 
                 </li>
@@ -62,7 +69,6 @@ const Home = (props) => {
           </ul>
         </div>
       )}
-      ,
     </div>
   );
 };
